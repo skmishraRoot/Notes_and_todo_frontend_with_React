@@ -12,7 +12,7 @@ import PrivateRoutes from './utils/PrivateRoute';
 
 
 
-function App() {
+const App = () => {
   return (
     <div className="App-container">
       <Header/>
