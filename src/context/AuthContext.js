@@ -1,12 +1,10 @@
 import { createContext, useState } from "react";
+import {useNavigate} from 'react-router-dom';
 import jwt_decode from 'jwt-decode';
-import { useNavigate } from 'react-router-dom';
+
 
 // Creating context
 const Authcontext = createContext()
-
-// exporting authcontext
-export default Authcontext
 
 // exporting provider function
 export const AuthProvider = ({children}) => {
@@ -15,7 +13,7 @@ export const AuthProvider = ({children}) => {
     const [user, setUser] = useState( () => localStorage.getItem('token') ? jwt_decode(localStorage.getItem('token')): null )
     const [token, setToken] = useState(() => localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')): null )
 
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     //  login function
     const loginUser = async(e ) => {
@@ -36,7 +34,7 @@ export const AuthProvider = ({children}) => {
                 setToken(data)
                 setUser(jwt_decode(data.access))
                 localStorage.setItem('token', JSON.stringify(data))
-                 
+                navigate('/')
             }else{
                 alert('Something went wrong!')
             }
@@ -63,3 +61,8 @@ export const AuthProvider = ({children}) => {
         </Authcontext.Provider>
     )
 }
+
+
+
+// exporting authcontext
+export default Authcontext
