@@ -1,11 +1,14 @@
 //  In react router v6 we use outlet and navigate to make aprivate route
+import { useContext } from 'react'
 import {Outlet, Navigate } from 'react-router-dom'
+import Authcontext from '../context/AuthContext'
+
 
 const PrivateRoutes = () => {
-    let auth = {'token':true}
+    const {user} = useContext(Authcontext)
 
     return (
-        auth.token ? <Outlet/> : <Navigate to='/login' />
+        user ? <Outlet/> : <Navigate to='/login' />
     )
 }
 

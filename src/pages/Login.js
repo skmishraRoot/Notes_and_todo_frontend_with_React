@@ -1,8 +1,11 @@
-import React from 'react'
-
-
+import React, {useContext} from 'react'
+import Authcontext from '../context/AuthContext'
 
 const Login = () => {
+
+  const {loginUser} = useContext(Authcontext)
+
+
   return (
     <div className='Login-container'>
       <div className='login-head-container'>
@@ -14,13 +17,13 @@ const Login = () => {
           I build the backend with Django Rest Framework and frontend with React Framework.
           They are quit a good stack to work.
         </p>
-        
+
       </div>
       <div className='login-form-container'>
-        <form>
+        <form onSubmit={loginUser}>
           <h3>Login Form</h3>
-          <input type='text' placeholder='Username'/>
-          <input type='text' placeholder='Password'/>
+          <input type='text' name='username' placeholder='Username'/>
+          <input type='password' name='password' placeholder='Password'/>
           <input type='submit'/>
         </form>
         <p>Don't have an account ? Register now</p>

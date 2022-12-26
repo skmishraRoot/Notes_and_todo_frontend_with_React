@@ -11,22 +11,21 @@ import Register from './pages/Register';
 import PrivateRoutes from './utils/PrivateRoute';
 
 
-
 const App = () => {
   return (
     <div className="App-container">
-      <Header/>
       <Router>
-        <Routes>
+      <Header/>
+        <Routes> 
           {/* Our Private routes / Protected routes */}
-          <Route element={<PrivateRoutes/>}>
-            <Route path='/home/todolist' element={<Todolist/>}/>
-            <Route path='/home/notes' element={<Notes/>}/>
-            <Route path='/' element={<HomePage/>}/>
-          </Route>
-          {/*  our auth routes */}
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/register' element={<Register/>}/>
+            <Route element={<PrivateRoutes/>}>
+              <Route path='/home/todolist' element={<Todolist/>}/>
+              <Route path='/home/notes' element={<Notes/>}/>
+              <Route path='/' element={<HomePage/>}/>
+              {/*  our auth routes */}
+            </Route>
+            <Route path='/login' element={<Login/>}/>
+            <Route path='/register' element={<Register/>}/>
         </Routes>
       </Router>
     </div>
