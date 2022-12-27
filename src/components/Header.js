@@ -11,8 +11,10 @@ const Header = () => {
     <div className='header-container'>
       {user && <strong>{user.username}</strong>}
       {user ? (
-        <p onClick={logoutUser}>Logout</p>
+        <h5 onClick={logoutUser}>Logout</h5>
       ):(<Link to={'/login'}>Login</Link>)}
+      <Link to='/home/notes'>Notes App</Link>
+      <Link to='/home/todo'>Todo App</Link>
     </div>
   )
 }
