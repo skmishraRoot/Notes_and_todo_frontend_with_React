@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-
+import { Link } from 'react-router-dom'
 
 
 const Todolist = () => {
@@ -21,9 +21,9 @@ const Todolist = () => {
 
   return (
     <div>
-      {Tasks.length > 0 &&
-        <p>Number of notes in the database is {Tasks.length}</p>
-      }
+      {Tasks.map((task, index) => ( 
+        <Link to={`/home/todo/${task.id}`} key={index}>{task.task}</Link>
+      ))}
     </div>
   )
 }

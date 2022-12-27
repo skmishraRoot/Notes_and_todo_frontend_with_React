@@ -9,14 +9,18 @@ const Authcontext = createContext()
 // exporting provider function
 export const AuthProvider = ({children}) => {
 
+
     // using usestate 
     const [user, setUser] = useState( () => localStorage.getItem('token') ? jwt_decode(localStorage.getItem('token')): null )
     const [token, setToken] = useState(() => localStorage.getItem('token') ? JSON.parse(localStorage.getItem('token')): null )
 
+
+    // Importing Navigate
     const navigate = useNavigate()
 
     //  login function
     const loginUser = async(e ) => {
+        // Preventing to make request when blank submit
         e.preventDefault()
         // requesting the site and sending our credentials.
         const response = await fetch('https://django-server-production-d333.up.railway.app/account/token/',{
@@ -28,7 +32,6 @@ export const AuthProvider = ({children}) => {
             })
 
             const data = await response.json()
-            
             // checking conditions.
             if (response.status === 200){
                 setToken(data)
@@ -40,7 +43,7 @@ export const AuthProvider = ({children}) => {
             }
         }
 
-
+    // Logout function
     const logoutUser = () => {
         setToken(null)
         setUser(null)
@@ -51,7 +54,7 @@ export const AuthProvider = ({children}) => {
     const contextData =  {
         user:user,
         loginUser:loginUser,
-        logoutUser:logoutUser
+        logoutUser:logoutUser,
     }
 
     // returing values which we get

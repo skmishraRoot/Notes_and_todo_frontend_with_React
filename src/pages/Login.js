@@ -1,4 +1,5 @@
 import React, {useContext} from 'react'
+import { Link } from 'react-router-dom'
 import Authcontext from '../context/AuthContext'
 
 const Login = () => {
@@ -26,7 +27,7 @@ const Login = () => {
           <input type='password' name='password' placeholder='Password'/>
           <input type='submit'/>
         </form>
-        <p>Don't have an account ? Register now</p>
+        <p>Don't have an account ? <Link to='/register'>Register</Link></p>
       </div>
     </div>
   )
