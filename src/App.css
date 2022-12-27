@@ -1,0 +1,32 @@
+body{
+    background-color:  #222629;
+}
+
+.App-container{
+    margin: 20px;
+}
+.Homepage-container{
+    margin:20%;
+    font-size: 1.6rem;
+    color: white;
+}
+
+/* Header page */
+.header-container{
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: space-between;
+}
+
+.header-item{
+    text-decoration: none;
+    color: #86C232;
+    font-weight: 400;
+    margin-left:5px;
+    margin-right:5px;
+}
+
+.header-con-2{
+    cursor: pointer;
+    display: flex;
+}

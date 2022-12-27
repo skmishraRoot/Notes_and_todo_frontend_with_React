@@ -19,9 +19,17 @@ const Notes = () => {
 
   return (
     <div>
-      {Notes.map((note, index) => ( 
-        <Link to={`/home/notes/${note.id}`} key={index}>{note.title}</Link>
-      ))}
+      <div>
+        <h2>Notes</h2>
+        <Link>CREATE</Link> <hr/>
+      </div>
+      <div>
+        <li>
+        {Notes.map((note, index) => ( 
+          <Link to={`/home/notes/${note.id}`} key={index}>{note.title}</Link>
+        ))}
+        </li>
+      </div>
     </div>
   )
 }

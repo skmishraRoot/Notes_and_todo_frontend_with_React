@@ -21,9 +21,15 @@ const Todolist = () => {
 
   return (
     <div>
-      {Tasks.map((task, index) => ( 
+      <div>
+        <h2>Todo List</h2>
+        <Link>CREATE</Link> <hr/>
+      </div>
+      <div>
+        <li>{Tasks.map((task, index) => ( 
         <Link to={`/home/todo/${task.id}`} key={index}>{task.task}</Link>
-      ))}
+      ))}</li>
+      </div>
     </div>
   )
 }

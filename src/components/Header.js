@@ -9,12 +9,15 @@ const Header = () => {
   
   return (
     <div className='header-container'>
-      {user && <strong>{user.username}</strong>}
-      {user ? (
-        <h5 onClick={logoutUser}>Logout</h5>
-      ):(<Link to={'/login'}>Login</Link>)}
-      <Link to='/home/notes'>Notes App</Link>
-      <Link to='/home/todo'>Todo App</Link>
+      <div className='header-con-1'>
+        <Link className='header-item' to='/'>Home</Link>
+        <Link className='header-item' to='/home/notes'>Notes App</Link>
+        <Link  className='header-item' to='/home/todo'><span>Todo App</span></Link>
+      </div>
+      <div className='header-con-2'>
+        <span className='header-item'>User:{user && <strong>{user.username}</strong>}</span>
+        <span className='header-item'>{user ? (<span onClick={logoutUser}>Logout</span>):(<Link to={'/login'}>Login</Link>)}</span>
+      </div>
     </div>
   )
 }

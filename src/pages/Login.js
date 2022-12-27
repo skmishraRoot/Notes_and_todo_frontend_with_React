@@ -8,28 +8,20 @@ const Login = () => {
 
 
   return (
-    <div className='Login-container'>
-      <div className='login-head-container'>
+      <div>
+        <div>
         <p>
-          Hello there welcome to my website
-        </p>
-        <p>
-          In these website I show case my skill of frontend and backend 
-          I build the backend with Django Rest Framework and frontend with React Framework.
-          They are quit a good stack to work.
-        </p>
-
+            Hello there welcome to my website.For accessing the websites other features please login or register.
+          </p>
+          <form  onSubmit={loginUser}>
+            <h3>Login Form</h3>
+            <input  type='text' name='username' placeholder='Username'/> <br/>
+            <input type='password' name='password' placeholder='Password'/><br/>
+            <input type='submit'/>
+          </form>
+          <p>Don't have an account ? <Link to='/register'>Register</Link></p>
+        </div>
       </div>
-      <div className='login-form-container'>
-        <form onSubmit={loginUser}>
-          <h3>Login Form</h3>
-          <input type='text' name='username' placeholder='Username'/>
-          <input type='password' name='password' placeholder='Password'/>
-          <input type='submit'/>
-        </form>
-        <p>Don't have an account ? <Link to='/register'>Register</Link></p>
-      </div>
-    </div>
   )
 }
 
