@@ -9,7 +9,7 @@ const Header = () => {
   
   return (
     <div className='header-container'>
-      <strong>{user.username}</strong> 
+      {user && <strong>{user.username}</strong>}
       {user ? (
         <p onClick={logoutUser}>Logout</p>
       ):(<Link to={'/login'}>Login</Link>)}
