@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
+import { useNavigate, useParams } from 'react-router'
 
 
 const Task = () => {
   // getting id from url by useParams hook
+  const navigate = useNavigate()
   const params = useParams()
   // use state
   const [Task, setTask] = useState(null)
@@ -20,8 +21,13 @@ const Task = () => {
   })
 
   return (
-    <div>
-      {Task && <h3>{Task.task}</h3>}
+    <div className='todo'>
+      <div className='todoitem-header'>   
+        <h1 onClick={()=>navigate(-1)}>&#10092;</h1>
+      </div>
+      <div className='todo-body'>
+        {Task && <h3 className='todo-title'>{Task.task}</h3>}
+      </div> 
     </div>
   )
 }

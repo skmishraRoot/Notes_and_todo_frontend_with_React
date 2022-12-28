@@ -20,15 +20,19 @@ const Todolist = () => {
   },[])
 
   return (
-    <div>
-      <div>
-        <h2>Todo List</h2>
-        <Link>CREATE</Link> <hr/>
+    <div className='app-body'> 
+      <div className='todo-header'>
+        <h1>Todo List</h1>
+        <h1>
+        <Link to='/home/todo/create'>&#43;</Link>
+        </h1>
       </div>
-      <div>
-        <li>{Tasks.map((task, index) => ( 
+      <div className='todo-list'>
+        <h3 className='todo-list-item'>
+        {Tasks.map((task, index) => ( 
         <Link to={`/home/todo/${task.id}`} key={index}>{task.task}</Link>
-      ))}</li>
+          ))}
+        </h3>
       </div>
     </div>
   )

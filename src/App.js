@@ -12,13 +12,15 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import PrivateRoutes from './utils/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
+import Addnotes from './components/Addnotes';
 
 
 
 
 const App = () => {
   return (
-    <div className="App-container">
+    <div className='container dark'>
+      <div className="app">
       <Router>
       <AuthProvider>
       <Header/>
@@ -30,6 +32,8 @@ const App = () => {
               <Route path='/' element={<HomePage/>}/>
               <Route path='/home/notes/:id' element={<Note/>}/>
               <Route path='/home/todo/:id' element={<Task/>}/>
+              <Route path='/home/notes/create' element={<Addnotes/>}/>
+              <Route path='/home/todo/create' element={<Task/>}/>
               {/*  our auth routes */}
             </Route>
             <Route path='/login' element={<Login/>}/>
@@ -37,7 +41,7 @@ const App = () => {
         </Routes>
         </AuthProvider>
       </Router>
-      
+    </div>
     </div>
   );
 }

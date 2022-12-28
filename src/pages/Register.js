@@ -27,7 +27,7 @@ const Register = () => {
     }
 
   return (
-    <div>
+    <div className='app-body'>
       <h3>Register</h3>
       <form onSubmit={userRegister}>
         <input type='text' placeholder='Email' name='email' /> 

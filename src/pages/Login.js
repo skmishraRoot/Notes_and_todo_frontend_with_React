@@ -8,7 +8,7 @@ const Login = () => {
 
 
   return (
-      <div>
+      <div className='app-body'>
         <div>
         <p>
             Hello there welcome to my website.For accessing the websites other features please login or register.

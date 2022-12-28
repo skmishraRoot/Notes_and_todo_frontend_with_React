@@ -18,17 +18,19 @@ const Notes = () => {
   },[])
 
   return (
-    <div>
-      <div>
-        <h2>Notes</h2>
-        <Link>CREATE</Link> <hr/>
+    <div className='app-body'>
+      <div className='notes-header'>
+        <h1>Notes</h1>
+        <h1>
+        <Link to='/home/notes/create'>&#43;</Link>
+        </h1>
       </div>
-      <div>
-        <li>
+      <div className='notes-list'>
+        <h3 className='notes-list-item'>
         {Notes.map((note, index) => ( 
           <Link to={`/home/notes/${note.id}`} key={index}>{note.title}</Link>
         ))}
-        </li>
+        </h3>
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import React from 'react'
 
 const HomePage = () => {
   return (
-    <div className='Homepage-container'>
+    <div className='app-body'>
         Hello there welcome to my site my name is skmishra and I am a python developer. You can use Two application on this website.sorry about the styling actully I am a backend developer with bad skill in css.
         <p>Number 1: Notes</p>
         <p>Number 2: Todolist</p>

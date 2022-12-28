@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
-
+import { useNavigate, useParams } from 'react-router'
 
 const Note = () => {
   // getting url id from useparams hook
   const params = useParams()
+  const navigate = useNavigate()
   // use state
   const [Note, setNote] = useState(null)
 
@@ -14,14 +14,23 @@ const Note = () => {
     const data = await response.json()
     setNote(data)
   }
+
   // use effect
   useEffect(() => {
     get_Note()
   })
 
   return (
-    <div>
-      {Note && <h3>{Note.title}</h3>} 
+    <div className='note'>
+      <div className='note-header'>   
+        <h1 onClick={()=>navigate(-1)}>&#10092;</h1>
+      </div>
+      <div className='note-body'>
+        <form>
+          {Note && <input className='note-title' defaultValue={Note.title}/>}
+          {Note && <textarea className='note-content' defaultValue={Note.content}></textarea>}
+        </form>
+      </div> 
     </div>
   )
 }
