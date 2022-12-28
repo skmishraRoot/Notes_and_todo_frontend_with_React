@@ -10,7 +10,6 @@ const Todolist = () => {
   const Retrive_Tasks = async () => {
     const response = await fetch('https://django-server-production-d333.up.railway.app/api/todo/')
     const data = await response.json()
-    console.log(data)
     setTasks(data)
   }
 
@@ -28,11 +27,9 @@ const Todolist = () => {
         </h1>
       </div>
       <div className='todo-list'>
-        <h3 className='todo-list-item'>
         {Tasks.map((task, index) => ( 
-        <Link to={`/home/todo/${task.id}`} key={index}>{task.task}</Link>
+        <Link to={`/home/todo/${task.id}`} key={index}><h3 className='todo-list-item'>{task.task}</h3></Link>
           ))}
-        </h3>
       </div>
     </div>
   )

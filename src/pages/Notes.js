@@ -26,11 +26,9 @@ const Notes = () => {
         </h1>
       </div>
       <div className='notes-list'>
-        <h3 className='notes-list-item'>
         {Notes.map((note, index) => ( 
-          <Link to={`/home/notes/${note.id}`} key={index}>{note.title}</Link>
+          <Link to={`/home/notes/${note.id}`} key={index}> <h3 className='notes-list-item'>{note.title}</h3></Link>
         ))}
-        </h3>
       </div>
     </div>
   )

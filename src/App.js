@@ -13,7 +13,7 @@ import Register from './pages/Register';
 import PrivateRoutes from './utils/PrivateRoute';
 import { AuthProvider } from './context/AuthContext';
 import Addnotes from './components/Addnotes';
-
+import Addtask from './components/Addtask';
 
 
 
@@ -33,7 +33,7 @@ const App = () => {
               <Route path='/home/notes/:id' element={<Note/>}/>
               <Route path='/home/todo/:id' element={<Task/>}/>
               <Route path='/home/notes/create' element={<Addnotes/>}/>
-              <Route path='/home/todo/create' element={<Task/>}/>
+              <Route path='/home/todo/create' element={<Addtask/>}/>
               {/*  our auth routes */}
             </Route>
             <Route path='/login' element={<Login/>}/>
