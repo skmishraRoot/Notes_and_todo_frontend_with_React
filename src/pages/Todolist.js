@@ -27,6 +27,7 @@ const Todolist = () => {
         </h1>
       </div>
       <div className='todo-list'>
+        {Tasks.length === 0 && <h3>No tasks yet.</h3>}
         {Tasks.map((task, index) => ( 
         <Link to={`/home/todo/${task.id}`} key={index}><h3 className='todo-list-item'>{task.task}</h3></Link>
           ))}

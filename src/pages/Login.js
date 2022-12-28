@@ -12,6 +12,7 @@ const Login = () => {
         <div>
         <h3 className='login-header'>
             Hello there welcome to my website.For accessing the websites other features please login or register.
+            Note: I am currently on free hosting so site loads little slow sorry about it.
           </h3>
           <form className='login-form' onSubmit={loginUser}>
             <h3>Login Form</h3>

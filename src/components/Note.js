@@ -41,8 +41,6 @@ const Note = () => {
         'Content-Type':'application/json'
       },
     })
-    const data = await response.json()
-    console.log(response)
     if (response.status === 200 ){
       navigate('/home/notes')
     }else if (response.status === 204 ) {
@@ -60,14 +58,14 @@ const Note = () => {
     <div className='note'>
       <div className='note-header'>   
         <h1 onClick={()=>navigate(-1)}>&#10092;</h1>
+        <button className='function-buttons' onClick={delete_note}>Delete</button>
       </div>
       <div className='note-body'>
-        <form onSubmit={update_note}>
+        <form>
           {Note && <input className='note-title' name='title' defaultValue={Note.title}/>}
           {Note && <textarea className='note-content' name='content' defaultValue={Note.content}></textarea>}
-          <button type='submit'>Done</button>
+            <button className='function-buttons' onClick={update_note} type='submit'>Done</button>  
         </form>
-        <button onClick={delete_note}>Delete</button>
       </div> 
     </div>
   )

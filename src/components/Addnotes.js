@@ -9,23 +9,24 @@ const Addnotes = () => {
   const navigate = useNavigate();
   const {user} = useContext(Authcontext)
   const [note, setnote] = useState(null)
+  
   const create_note = async(e) => {
     e.preventDefault()
     const response = await fetch('https://django-server-production-d333.up.railway.app/api/notes/create/',{
-      method:'PATCH',
+      method:'POST',
       headers:{
         'Content-Type':'application/json'
       },
       body:JSON.stringify({'title':e.target.createtitle.value, 'content':e.target.createcontent.value, 'user':user.user_id})
     })
-    if (response.status === 200){
+    if (response.status === 201){
       navigate('/home/notes')
     }else{
-      alert('Something went wrong.please try again.')
     }
     const data = await response.json()
     setnote(data)
   }
+
   return (
     <div className='note'>
     <div className='note-header'>   
@@ -35,7 +36,7 @@ const Addnotes = () => {
      <form onSubmit={create_note}>
         <input className='note-title' placeholder='Your Note title' name='createtitle'/>
         <textarea className='note-content'  placeholder='Your Note body' name='createcontent'></textarea>
-        <button type='submit'>Create</button>
+        <button className='function-buttons' type='submit'>Create</button>
      </form>
     </div> 
   </div>

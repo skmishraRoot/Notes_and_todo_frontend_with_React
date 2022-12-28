@@ -26,6 +26,7 @@ const Notes = () => {
         </h1>
       </div>
       <div className='notes-list'>
+      {Notes.length === 0 && <h3>No tasks yet.</h3>}
         {Notes.map((note, index) => ( 
           <Link to={`/home/notes/${note.id}`} key={index}> <h3 className='notes-list-item'>{note.title}</h3></Link>
         ))}

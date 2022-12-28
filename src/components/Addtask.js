@@ -35,8 +35,8 @@ const Addtask = () => {
     <div className='todo-body'> 
      <form className='todo-form' onSubmit={create_task}>
         <input className='todo-title' placeholder='Your Note title' name='createtask'/>
-        <input className='todo-checkbox' name='createstatus' type='checkbox'/>
-        <button type='submit'>Create</button>
+        <input className='todo-checkbox' name='createstatus' type='checkbox'/><br/>
+        <button className='function-buttons' type='submit'>Create</button>
      </form>
     </div> 
   </div>
