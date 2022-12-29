@@ -11,7 +11,7 @@ const Notes = () => {
 
   // Making funcation to retrive data
   const Retrive_notes = async () => {
-    const response = await fetch('https://django-server-production-d333.up.railway.app/api/notes/',{
+    const response = await fetch('https://django-api.up.railway.app/api/notes/',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',

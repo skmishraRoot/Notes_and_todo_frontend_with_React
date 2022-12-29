@@ -14,7 +14,7 @@ const Note = () => {
 
   // Getting note
   const get_Note = async() => {
-    const response = await fetch(`https://django-server-production-d333.up.railway.app/api/notes/${params.id}/`,{
+    const response = await fetch(`https://django-api.up.railway.app/api/notes/${params.id}/`,{
       method:"GET",
       headers:{
         'Content-Type':'application/json',
@@ -29,7 +29,7 @@ const Note = () => {
 
   // Delete function.
   const delete_note = async() => {
-    const response = await fetch(`https://django-server-production-d333.up.railway.app/api/notes/delete/${params.id}`,{
+    const response = await fetch(`https://django-api.up.railway.app/api/notes/delete/${params.id}`,{
       method:'DELETE',
       headers:{
         'Content-Type':'application/json',

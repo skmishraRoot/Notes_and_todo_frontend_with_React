@@ -16,7 +16,7 @@ const Addnotes = () => {
   // create function
   const create_note = async(e) => {
     e.preventDefault()
-    const response = await fetch('https://django-server-production-d333.up.railway.app/api/notes/create/',{
+    const response = await fetch('https://django-api.up.railway.app//api/notes/create/',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',

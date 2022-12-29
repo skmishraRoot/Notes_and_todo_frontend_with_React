@@ -10,7 +10,7 @@ const Register = () => {
     // Preventing to make request when blank submit
     e.preventDefault()
     // requesting the site and sending our credentials.
-    const response = await fetch('https://django-server-production-d333.up.railway.app/register/',{
+    const response = await fetch('https://django-api.up.railway.app/register/',{
             method:"POST",
             headers:{'Content-Type':'application/json',},
             body:JSON.stringify({"username":e.target.username.value, "password":e.target.password.value, 'password2':e.target.password.value,'email':e.target.email.value})
