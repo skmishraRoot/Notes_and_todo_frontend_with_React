@@ -6,26 +6,33 @@ import Authcontext from '../context/AuthContext';
 
 // addnote function
 const Addnotes = () => {
+
+
   const navigate = useNavigate();
-  const {user} = useContext(Authcontext)
+  const {user, token} = useContext(Authcontext)
   const [note, setnote] = useState(null)
   
+
+  // create function
   const create_note = async(e) => {
     e.preventDefault()
-    const response = await fetch('https://django-server-production-d333.up.railway.app/api/notes/create/',{
+    const response = await fetch('/api/notes/create/',{
       method:'POST',
       headers:{
-        'Content-Type':'application/json'
-      },
+        'Content-Type':'application/json',
+        'Authorization':(`Bearer ${token.access}`
+      )},
       body:JSON.stringify({'title':e.target.createtitle.value, 'content':e.target.createcontent.value, 'user':user.user_id})
     })
     if (response.status === 201){
       navigate('/home/notes')
     }else{
+      alert('Something went wrong please try again.')
     }
     const data = await response.json()
     setnote(data)
   }
+  
 
   return (
     <div className='note'>

@@ -7,15 +7,20 @@ import Authcontext from '../context/AuthContext';
 // addnote function
 const Addtask = () => {
 
+
   const navigate = useNavigate();
-  const {user} = useContext(Authcontext)
+  const {user, token} = useContext(Authcontext)
+
+
+
 //   const [task, settask] = useState(null)
   const create_task = async(e) => {
     e.preventDefault()
-    const response = await fetch('https://django-server-production-d333.up.railway.app/api/todo/create/',{
+    const response = await fetch('/api/todo/create/',{
       method:'POST',
       headers:{
-        'Content-Type':'application/json'
+        'Content-Type':'application/json',
+        'Authorization':(`Bearer ${token.access}`)
       },
       body:JSON.stringify({'task':e.target.createtask.value, 'completed':e.target.createstatus.value, 'user':user.user_id})
     })
@@ -27,6 +32,10 @@ const Addtask = () => {
     const data = await response.json()
     // settask(data)
   }
+
+
+
+  
   return (
     <div className='todo'>
     <div className='todoback-header'>   
