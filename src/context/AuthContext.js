@@ -28,7 +28,9 @@ export const AuthProvider = ({children}) => {
         const response = await fetch('/account/token/',{
                 method:"POST",
                 headers:{'Content-Type':'application/json',},
-                body:JSON.stringify({"username":e.target.username.value, "password":e.target.password.value})})
+                body:JSON.stringify({"username":e.target.username.value, "password":e.target.password.value})
+            })
+            
             const data = await response.json()
             // checking conditions.
             if (response.status === 200){
