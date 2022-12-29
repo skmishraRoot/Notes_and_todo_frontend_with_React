@@ -25,7 +25,7 @@ export const AuthProvider = ({children}) => {
         // Preventing to make request when blank submit
         e.preventDefault()
         // requesting the site and sending our credentials.
-        const response = await fetch('/account/token/',{
+        const response = await fetch('https://django-server-production-d333.up.railway.app/account/token/',{
                 method:"POST",
                 headers:{'Content-Type':'application/json',},
                 body:JSON.stringify({"username":e.target.username.value, "password":e.target.password.value})
@@ -45,7 +45,7 @@ export const AuthProvider = ({children}) => {
     
     // update token function
     const refresh_token = async(e) => {
-        const response = await fetch('/account/token/refresh/',{
+        const response = await fetch('https://django-server-production-d333.up.railway.app/account/token/refresh/',{
                     method:"POST",
                     headers:{'Content-Type':'application/json',},
                     body:JSON.stringify({'refresh':token.refresh})})

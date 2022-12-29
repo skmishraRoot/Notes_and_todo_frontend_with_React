@@ -15,7 +15,7 @@ const Task = () => {
 
   // Getting note
   const get_Task = async() => {
-    const response = await fetch(`/api/todo/${params.id}/`,{
+    const response = await fetch(`https://django-server-production-d333.up.railway.app/api/todo/${params.id}/`,{
       method:'GET',
       headers:{
         'Content-Type':'application/json',
@@ -29,7 +29,7 @@ const Task = () => {
 
 
   const delete_note = async() => {
-    const response = await fetch(`/api/todo/delete/${params.id}/`,{
+    const response = await fetch(`https://django-server-production-d333.up.railway.app/api/todo/delete/${params.id}/`,{
       method:'DELETE',
       headers:{
           'Content-Type':'application/json',

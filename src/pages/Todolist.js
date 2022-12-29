@@ -10,7 +10,7 @@ const Todolist = () => {
   const [Tasks, setTasks] = useState([])
   // Making funcation to retrive data
   const Retrive_Tasks = async () => {
-    const response = await fetch('/api/todo/',{
+    const response = await fetch('https://django-server-production-d333.up.railway.app/api/todo/',{
       method:'GET',
       headers:{
         'Content-Type':'application/json',

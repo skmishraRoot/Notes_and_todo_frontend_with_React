@@ -16,7 +16,7 @@ const Addtask = () => {
 //   const [task, settask] = useState(null)
   const create_task = async(e) => {
     e.preventDefault()
-    const response = await fetch('/api/todo/create/',{
+    const response = await fetch('https://django-server-production-d333.up.railway.app/api/todo/create/',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
