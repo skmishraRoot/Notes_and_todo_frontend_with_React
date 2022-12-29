@@ -76,7 +76,7 @@ export const AuthProvider = ({children}) => {
 
     // using useeffect to call refresh token
     useEffect(() => {
-        const fourmins = 5000 
+        const fourmins = 1000 * 60 * 4 
         const interval = setInterval(() => {
             if(token){
                 refresh_token()
